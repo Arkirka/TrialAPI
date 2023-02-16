@@ -1,9 +1,11 @@
 package ru.vorobyov.trialapi.controllers;
 
-import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ru.vorobyov.trialapi.entities.User;
 import ru.vorobyov.trialapi.services.interfaces.UserService;
 
@@ -17,16 +19,8 @@ public class UserController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public long createUser(@RequestBody User user) {
-        if (user == null)
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "User is null");
-        try{
-            return userService.createUser(user);
-        } catch (DataAccessException e) {
-            throw new ResponseStatusException(
-                    HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
-        }
+    public ResponseEntity<Long> createUser(@RequestBody User user) {
+        long id = userService.createUser(user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(id);
     }
 }
