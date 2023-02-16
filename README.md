@@ -2,6 +2,7 @@
 Java Spring Boot REST API for trial task.  
 
 # Methods description
+## GET methods
 ```
 GET /api/quotes
 ```
@@ -22,6 +23,8 @@ returns a random quote as a Quote object
 GET /api/quotes/{id}
 ```
 returns the quote with the specified ID as a Quote object
+
+## POST methods
 ```
 POST /api/quotes
 ```
@@ -32,9 +35,11 @@ creates a new quote with the specified content and returns its ID
   "content": "This is a new quote"
 }
 ```
-* POST /api/users
- - creates a new user and returns its ID
- Example:
+```
+POST /api/users
+```
+creates a new user and returns its ID
+ * Example:
  ```json
 {
   "id": 1,
@@ -43,17 +48,23 @@ creates a new quote with the specified content and returns its ID
   "email": "john@example.com"
 }
 ```
-* PUT /api/quotes/{id}
- - updates the content of the quote with the specified id to the specified content
- Example:
+
+## PUT methods
+```
+PUT /api/quotes/{id}
+```
+updates the content of the quote with the specified id to the specified content
+ * Example:
  ```json
  
 "This is the updated quote"
 
 ```
-* PUT /api/quotes/1/upvote
-- increases the rating by 1 for the quote with the specified id from the specified user
- Example:
+```
+PUT /api/quotes/1/upvote
+```
+increases the rating by 1 for the quote with the specified id from the specified user
+ * Example:
  ```json
 {
   "id": 1,
@@ -62,9 +73,11 @@ creates a new quote with the specified content and returns its ID
   "email": "john@example.com"
 }
 ```
-* PUT /api/quotes/1/downvote
-- decrements the rating by 1 for a quote with the specified id from the specified user
- Example:
+```
+PUT /api/quotes/1/downvote
+```
+decrements the rating by 1 for a quote with the specified id from the specified user
+ * Example:
  ```json
 {
   "id": 1,
@@ -73,5 +86,9 @@ creates a new quote with the specified content and returns its ID
   "email": "john@example.com"
 }
 ```
-* DELETE /api/quotes/1
-- removes quote with specified id
+
+## DELETE methods
+```
+DELETE /api/quotes/1
+```
+removes quote with specified id
