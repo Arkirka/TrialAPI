@@ -3,10 +3,12 @@ Java Spring Boot REST API for trial task.
 
 # Methods description
 ## GET methods
+*
 ```
 GET /api/quotes
 ```
 returns a list of all quotes as a list of Quote objects
+*
 ```
 GET /api/quotes/top
  ```
