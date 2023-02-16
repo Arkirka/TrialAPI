@@ -2,19 +2,31 @@
 Java Spring Boot REST API for trial task.  
 
 # Methods description
-* GET /api/quotes
- - returns a list of all quotes as a list of Quote objects
-* GET /api/quotes/top
- - returns a list of the best quotes as a list of Quote objects
-* GET /api/quotes/worst
- - returns a list of the worst quotes as a list of Quote objects
-* GET /api/quotes/random
- - returns a random quote as a Quote object
-* GET /api/quotes/{id}
- - returns the quote with the specified ID as a Quote object
-* POST /api/quotes
- - creates a new quote with the specified content and returns its ID
- Example:
+```
+GET /api/quotes
+```
+returns a list of all quotes as a list of Quote objects
+```
+GET /api/quotes/top
+ ```
+returns a list of the best quotes as a list of Quote objects
+```
+GET /api/quotes/worst
+```
+returns a list of the worst quotes as a list of Quote objects
+```
+GET /api/quotes/random
+```
+returns a random quote as a Quote object
+```
+GET /api/quotes/{id}
+```
+returns the quote with the specified ID as a Quote object
+```
+POST /api/quotes
+```
+creates a new quote with the specified content and returns its ID
+ * Example:
  ```json
 {
   "content": "This is a new quote"
