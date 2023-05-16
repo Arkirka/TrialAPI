@@ -1,5 +1,5 @@
-# Trial task - Quote API
-Java Spring Boot REST API for trial task.  
+# Quote API
+Java Spring Boot REST API.  
 
 # Methods description
 ## GET methods
